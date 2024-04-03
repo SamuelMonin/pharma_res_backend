@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const codeValidationSchema = new mongoose.Schema({
-    code: Number,
+    code: String,
     createdAt: Date
 })
 
