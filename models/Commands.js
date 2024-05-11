@@ -6,18 +6,13 @@ const productSchema = new mongoose.Schema({
     score: Number
 });
 
-const userSchema = new mongoose.Schema({
-    login: String,
-    password: String
-})
-
 const commandSchema = new mongoose.Schema({
     date: String,
     cart: [productSchema],
     deliver: String,
     totalPrice: Number,
     adress: String,
-    user: userSchema
+    userLogin: String
 });
 
 

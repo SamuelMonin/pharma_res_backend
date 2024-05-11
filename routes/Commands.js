@@ -43,7 +43,7 @@ router.post('/commands/put-item', auth(), async (req, res) => {
                     deliver: req.body.deliver,
                     totalPrice: req.body.totalPrice,
                     adress: req.body.adress,
-                    user: req.body.user,
+                    userLogin: req.body.userLogin,
                 }
             },
             { upsert: true }
