@@ -11,6 +11,7 @@ const auth = () => (req, res, next) => {
     try {
       const token = req.headers.authorization.split(" ")[1];
       const { login } = jwt.verify(token, 'SAM_S_SECRET');
+      req.login = login;
       if (!login) {
         res.status(403).json({ success: false, message: "Votre compte n'a pas la permission pour réaliser cette action." });
         return;
@@ -21,9 +22,10 @@ const auth = () => (req, res, next) => {
     }
   };
 
-router.get('/commands', async (req, res) => {
+router.get('/commands', auth(), async (req, res) => {
     try {
-      const commands = await commandsModel.find({});
+      const userLogin = req.login;
+      const commands = await commandsModel.find({userLogin});
       res.json(commands);
     } catch (error) {
       console.error(error);

@@ -57,6 +57,7 @@ router.post('/users/login', async (req, res) => {
         }
         let token = jwt.sign(
             {
+                id: user._id,
                 login: login,
             },
             "SAM_S_SECRET",
@@ -85,7 +86,7 @@ router.post('/users/send-mail', async (req, res) => {
         const currentDate = new Date();
         const mailOptions = {
             from: "samuel.monin2003@gmail.com",
-            to: "jean.dupuis454545@gmail.com",
+            to: req.body.mail,
             subject: "Test du mail",
             html: `<p>Voici votre code : ${securityKey}</p>`
         };
