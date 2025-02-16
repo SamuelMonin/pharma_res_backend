@@ -1,14 +1,13 @@
 # PharmaRes back-end
 
-This repesitory contains PharmaRes back-end developed with React Native.
+This repesitory contains PharmaRes back-end developed with NodeJS.
 
 PharmaRes is an application built for an academic project allowing people to command pharmaceutical products.
 
 ## Technologies
 
-* [React](https://react.dev)
-* [MUI](https://mui.com)
-* [Redux Toolkit](https://redux-toolkit.js.org)
+* [Node.js](https://nodejs.org/en)
+* [JWT (JSON Web Tokens)](https://jwt.io)
 
 
 ## Usage
